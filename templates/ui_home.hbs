@@ -1,0 +1,23 @@
+ <div class="ui_home">
+    <h1>Homepage</h1>
+
+    <div id="user_op_response">
+        {{#if err}}
+            {{err}}
+        {{/if}}
+    </div>
+
+    <div class="input_container" id="input_container">
+        <div class="user_input" id="user_input">
+            <form
+                hx-target="response_container"
+                action="/prompt"
+                method="POST"
+            >
+                <input type="text" placeholder="Enter a prompt ..." />
+            </form>
+        </div>
+    </div>
+    <div class="response_container" id="response_container">
+    </div>
+</div>
