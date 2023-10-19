@@ -13,6 +13,7 @@
         <div class="input_container" id="input_container">
             <div class="user_input" id="user_input">
                 <form
+                    class="form-style"
                     hx-target="#response_container"
                     hx-swap="innerHTML"
                     {{!-- Why is this attaching URL parameters? --}}
@@ -20,8 +21,14 @@
                     method="POST"
                     action="/prompt"
                 >
-                    <input type="text" name="prompt" id="prompt" class="field-style field-full align-none" placeholder="Enter a prompt ..." />
-                    <button type="submit">Submit</button>
+                    <ul>
+                        <li>
+                            <input type="text" name="prompt" id="prompt" class="field-style field-full align-none" placeholder="Enter a prompt ..." />
+                        </li>
+                        <li>
+                            <button type="submit">Submit</button>
+                        </li>
+                    </ul>
                 </form>
             </div>
         </div>
