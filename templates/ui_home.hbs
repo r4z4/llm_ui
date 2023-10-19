@@ -1,27 +1,30 @@
- <div class="ui_home">
-    <h1>Homepage</h1>
+{{
+#>
+ main-layout title='UI Home' }}
+    <div class="ui_home">
+        <h1>Homepage</h1>
 
-    <div id="user_op_response">
-        {{#if err}}
-            {{err}}
-        {{/if}}
-    </div>
-
-    <div class="input_container" id="input_container">
-        <div class="user_input" id="user_input">
-            <form
-                hx-target="#response_container"
-                hx-swap="innerHTML"
-                {{!-- Why is this attaching URL parameters? --}}
-                {{!-- hx-post="/prompt" --}}
-                method="POST"
-                action="/prompt"
-            >
-                <input type="text" name="prompt" id="prompt" class="field-style field-full align-none" placeholder="Enter a prompt ..." />
-                <button type="submit">Submit</button>
-            </form>
+        <div id="user_op_response">
+            {{#if err}}
+                {{err}}
+            {{/if}}
         </div>
+
+        <div class="input_container" id="input_container">
+            <div class="user_input" id="user_input">
+                <form
+                    hx-target="#response_container"
+                    hx-swap="innerHTML"
+                    {{!-- Why is this attaching URL parameters? --}}
+                    {{!-- hx-post="/prompt" --}}
+                    method="POST"
+                    action="/prompt"
+                >
+                    <input type="text" name="prompt" id="prompt" class="field-style field-full align-none" placeholder="Enter a prompt ..." />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="response_container" id="response_container" />
     </div>
-    <div class="response_container" id="response_container">
-    </div>
-</div>
+{{/main-layout}}

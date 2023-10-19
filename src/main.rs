@@ -101,7 +101,7 @@ fn infer(prompt: String) -> Result<String, Box<dyn std::error::Error>> {
             parameters: &InferenceParameters::default(),
             play_back_previous_tokens: true,
             /// The maximum number of tokens to generate.
-            maximum_token_count: Some(100),
+            maximum_token_count: Some(20),
         },
         // llm::OutputRequest
         &mut Default::default(),
